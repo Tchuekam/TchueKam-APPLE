@@ -1,0 +1,200 @@
+COMPLETE REPLACEMENT CHECKLIST
+================================
+
+Your Apple website clone contains the following that needs replacement:
+
+═══════════════════════════════════════════════════════════════════
+
+1. HREFLANG ALTERNATE LINKS (BIG - REMOVES ~3KB PER FILE)
+─────────────────────────────────────────────────────────
+   Location: <head> section of EVERY HTML file
+   Count: ~200 per file
+   
+   BEFORE:
+   <link rel="alternate" href="https://www.apple.com/ae-ar/" hreflang="ar-AE" />
+   <link rel="alternate" href="https://www.apple.com/ae/" hreflang="en-AE" />
+   ... (hundreds more)
+   
+   AFTER:
+   <link rel="alternate" href="/index.html" hreflang="en-US" />
+   
+   ✅ SCRIPT HANDLES THIS
+
+═══════════════════════════════════════════════════════════════════
+
+2. OPEN GRAPH METADATA (SEO/SOCIAL SHARING)
+─────────────────────────────────────────────
+   Location: <head> section
+   
+   BEFORE:
+   <meta property="og:image" content="https://www.apple.com/ac/structured-data/images/open_graph_logo.png" />
+   <meta property="og:title" content="Apple" />
+   <meta property="og:url" content="https://www.apple.com/" />
+   <meta property="og:site_name" content="Apple" />
+   
+   AFTER:
+   <!-- Remove or add your own logo -->
+   <meta property="og:title" content="Your Site" />
+   <meta property="og:url" content="/" />
+   <meta property="og:site_name" content="Your Site" />
+   
+   ✅ PARTIALLY HANDLED (Main index.html done, others need manual update)
+
+═══════════════════════════════════════════════════════════════════
+
+3. EXTERNAL APPLE SERVICE LINKS
+─────────────────────────────────
+   
+   SUPPORT LINKS:
+   Before: href="https://support.apple.com/..."
+   After:  href="#"
+   ✅ SCRIPT HANDLES THIS
+   
+   ICLOUD LINKS:
+   Before: href="https://www.icloud.com/..."
+   After:  href="#"
+   ✅ SCRIPT HANDLES THIS
+   
+   APP STORE LINKS:
+   Before: href="https://apps.apple.com/..."
+   After:  href="#"
+   ✅ SCRIPT HANDLES THIS
+   
+   MAIN SITE LINKS:
+   Before: href="https://www.apple.com/..."
+   After:  href="#"
+   ✅ SCRIPT HANDLES THIS
+
+═══════════════════════════════════════════════════════════════════
+
+4. SOCIAL MEDIA LINKS
+──────────────────────
+   
+   APPLE INSTAGRAM/TWITTER/FACEBOOK:
+   Before: href="https://instagram.com/apple"
+   After:  href="https://www.linkedin.com/in/tchuekam-rostand/"
+   ✅ SCRIPT HANDLES THIS
+   
+   APPLE YOUTUBE:
+   Before: href="https://youtube.com/@apple"
+   After:  href="https://www.youtube.com/@Giantech-Empire"
+   ✅ SCRIPT HANDLES THIS
+
+═══════════════════════════════════════════════════════════════════
+
+5. YOUR CONTACT INFORMATION (ADD TO FOOTER/CONTACT PAGES)
+──────────────────────────────────────────────────────────
+   
+   NAME:           Tchuekam Rostand
+   
+   LINKEDIN:       https://www.linkedin.com/in/tchuekam-rostand/
+   YOUTUBE:        https://www.youtube.com/@Giantech-Empire
+   
+   PHONE:          +237659248952
+   PHONE ALT:      +237653683174
+   
+   PORTFOLIO 1:    https://tchuekam-agent.netlify.app/
+   PORTFOLIO 2:    https://tchuekamui-sovereign.vercel.app/
+   
+   ⚠️  NEEDS MANUAL ADD TO PAGES
+
+═══════════════════════════════════════════════════════════════════
+
+6. ANALYTICS/TRACKING SCRIPTS
+──────────────────────────────
+   Location: <head> and <body> sections
+   
+   REMOVE: Any <script> tags with src pointing to apple.com
+   ✅ SCRIPT HANDLES THIS
+
+═══════════════════════════════════════════════════════════════════
+
+AFFECTED FILES (12 TOTAL)
+─────────────────────────
+
+✓ ./index.html
+✓ ./store/index.html
+✓ ./mac/index.html
+✓ ./iphone/index.html
+✓ ./ipad/index.html
+✓ ./watch/index.html
+✓ ./airpods/index.html
+✓ ./apple-vision-pro/index.html
+✓ ./tv-home/index.html
+✓ ./entertainment/index.html
+✓ ./shop/buy-iphone/index.html
+✓ ./us/shop/goto/store/index.html
+
+═══════════════════════════════════════════════════════════════════
+
+AUTOMATED SOLUTION
+──────────────────
+
+The script remove_apple_links.py handles ~95% of replacements:
+
+TO RUN:
+  1. Open Command Prompt
+  2. cd c:\Users\CLINIC\.gemini\antigravity-ide\scratch\apple-clone
+  3. python remove_apple_links.py
+
+OR double-click: clean_apple_links.bat
+
+═══════════════════════════════════════════════════════════════════
+
+MANUAL FOLLOW-UP NEEDED
+────────────────────────
+
+After running script, manually:
+
+1. Update page titles (<title> tags)
+   From: "Apple" or "Buy iPhone"
+   To: Your brand name
+
+2. Update meta descriptions
+   From: Apple product descriptions
+   To: Your site description
+
+3. Add footer section with your contact info
+   Name, phone, LinkedIn, YouTube, portfolios
+
+4. Test all links work correctly
+
+5. Replace page content/branding as needed
+
+═══════════════════════════════════════════════════════════════════
+
+VERIFICATION
+────────────
+
+After running script, search for these in VS Code (Ctrl+F):
+  ❌ apple.com/         ← Should find 0
+  ❌ support.apple      ← Should find 0
+  ❌ icloud.com         ← Should find 0
+  ❌ apps.apple.com     ← Should find 0
+  ✓ hreflang="en-US"   ← Should find 1 per file
+  ✓ your LinkedIn      ← Should find multiple
+
+═══════════════════════════════════════════════════════════════════
+
+FILES CREATED FOR YOU
+─────────────────────
+
+1. remove_apple_links.py     ← Main cleanup script
+2. clean_apple_links.bat     ← Windows batch file (double-click to run)
+3. APPLE_LINKS_REMOVAL_GUIDE.md   ← Detailed guide
+4. QUICK_START.md            ← Quick reference
+5. REPLACEMENT_CHECKLIST.txt ← This file
+
+═══════════════════════════════════════════════════════════════════
+
+NEXT STEPS
+──────────
+
+1. RUN THE SCRIPT (Fastest)
+2. Verify changes in browser
+3. Update page titles and descriptions
+4. Add your contact info to footer
+5. Test all links
+6. Deploy!
+
+═══════════════════════════════════════════════════════════════════
