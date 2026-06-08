@@ -1,0 +1,203 @@
+╔════════════════════════════════════════════════════════════════════════════════╗
+║                                                                                ║
+║                    🚀 HOW TO RUN YOUR WEBSITE LOCALLY                          ║
+║                                                                                ║
+╚════════════════════════════════════════════════════════════════════════════════╝
+
+There are 3 ways to run and view your website with the changes:
+
+════════════════════════════════════════════════════════════════════════════════
+
+✨ OPTION 1: SUPER EASY (Recommended - 1 Click!)
+───────────────────────────────────────────────────────────────────────────────
+
+1. Open File Explorer
+2. Navigate to: c:\Users\CLINIC\.gemini\antigravity-ide\scratch\apple-clone
+3. Double-click: RUN_WEBSITE.bat
+4. Wait for it to say "✓ Server starting..."
+5. Open your browser and go to: http://localhost:8001
+6. You'll see your website with all Apple links removed!
+
+📝 Notes:
+   - The batch file automatically runs the cleanup script first
+   - It starts the web server on port 8001
+   - Keep the Command Prompt window open while browsing
+   - Press Ctrl+C to stop the server when done
+
+════════════════════════════════════════════════════════════════════════════════
+
+💻 OPTION 2: COMMAND PROMPT (Step-by-step)
+───────────────────────────────────────────────────────────────────────────────
+
+1. Press: Windows + R
+2. Type: cmd
+3. Press: Enter
+4. Copy and paste these commands one by one:
+
+   cd c:\Users\CLINIC\.gemini\antigravity-ide\scratch\apple-clone
+   
+   python remove_apple_links.py
+   
+   python -m http.server 8001
+
+5. When you see "Serving HTTP on..." the server is running
+6. Open browser and go to: http://localhost:8001
+
+📝 Notes:
+   - First command changes to the folder
+   - Second command removes Apple links
+   - Third command starts the server
+   - Leave Command Prompt open
+
+════════════════════════════════════════════════════════════════════════════════
+
+🔧 OPTION 3: MANUAL (For troubleshooting)
+───────────────────────────────────────────────────────────────────────────────
+
+Step 1: Clean Apple links manually first
+   - Open VS Code
+   - Open the apple-clone folder
+   - Click Terminal → New Terminal
+   - Run: python remove_apple_links.py
+   - Watch the output
+
+Step 2: Start web server
+   - In the same terminal, run: python -m http.server 8001
+   - You should see: "Serving HTTP on 0.0.0.0 port 8001"
+
+Step 3: Open in browser
+   - Type in address bar: http://localhost:8001
+   - Your website should load!
+
+════════════════════════════════════════════════════════════════════════════════
+
+🌐 WHAT YOU'LL SEE
+───────────────────────────────────────────────────────────────────────────────
+
+When the website loads, you'll see:
+
+✓ Homepage with products (iPhone, Mac, iPad, Watch, etc.)
+✓ Store page
+✓ Navigation menu
+✓ All the original Apple website structure
+
+But now with:
+
+✓ No Apple external links (all replaced with #)
+✓ No hreflang alternate language links
+✓ Social media links point to YOUR LinkedIn
+✓ YouTube links point to YOUR channel
+✓ All Apple tracking/analytics removed
+
+════════════════════════════════════════════════════════════════════════════════
+
+🔍 HOW TO VERIFY CHANGES
+─────────────────────────────────────────────────────────────────────────────
+
+While browsing your website:
+
+1. Look at the footer
+   ├─ Social media links should go to your LinkedIn & YouTube
+   └─ NOT Apple's accounts
+
+2. Try clicking links
+   ├─ Internal links should work (/store, /iphone, etc.)
+   ├─ External Apple links should do nothing (#)
+   └─ Click a support link - should do nothing (safe!)
+
+3. Check the page source (Right-click → View Page Source)
+   ├─ Search for "apple.com"
+   ├─ You should find ZERO results
+   ├─ Search for "linkedin.com"
+   ├─ You should find YOUR LinkedIn link
+
+════════════════════════════════════════════════════════════════════════════════
+
+🖼️ PREVIEW WHAT CHANGED
+─────────────────────────────────────────────────────────────────────────────
+
+BEFORE (Original Apple Clone):
+┌─────────────────────────────────────────────────────┐
+│ Homepage                                            │
+├─────────────────────────────────────────────────────┤
+│ Footer:                                             │
+│  Follow us: [Instagram] [Twitter] [Facebook]       │
+│             → All link to Apple's accounts         │
+│  Support: https://support.apple.com (Dead link)    │
+│  Page source has 200+ hreflang links to apple.com  │
+└─────────────────────────────────────────────────────┘
+
+AFTER (With Your Changes):
+┌─────────────────────────────────────────────────────┐
+│ Homepage                                            │
+├─────────────────────────────────────────────────────┤
+│ Footer:                                             │
+│  Follow us: [LinkedIn] [YouTube]                    │
+│             → Links to YOUR profiles                │
+│  Support: # (Safe dead link, doesn't go anywhere)  │
+│  Page source clean - no apple.com links!           │
+└─────────────────────────────────────────────────────┘
+
+════════════════════════════════════════════════════════════════════════════════
+
+⚠️ TROUBLESHOOTING
+─────────────────────────────────────────────────────────────────────────────
+
+❌ "Python not found" or "python: command not found"
+   ✓ Install Python from: https://www.python.org/downloads/
+   ✓ Make sure to check "Add Python to PATH" during installation
+   ✓ Restart Command Prompt after installing
+
+❌ "Port 8001 already in use"
+   ✓ Run: python -m http.server 8002  (try different port)
+   ✓ Or: python -m http.server 8000
+
+❌ "Connection refused" when visiting http://localhost:8001
+   ✓ Make sure Command Prompt is still open
+   ✓ Make sure you see "Serving HTTP on..." message
+   ✓ Try waiting 5 seconds after starting
+
+❌ Website doesn't load
+   ✓ Check: Do you have index.html in the folder?
+   ✓ Check: Is Command Prompt showing errors?
+   ✓ Try: Refreshing the page (Ctrl+R or F5)
+
+════════════════════════════════════════════════════════════════════════════════
+
+📞 WHAT YOU'LL NOTICE CHANGED
+─────────────────────────────────────────────────────────────────────────────
+
+✓ Hreflang links removed (no more language switching metadata)
+✓ Footer social media points to YOUR profiles
+✓ Support links do nothing (safe placeholders)
+✓ All external apple.com links removed
+✓ Analytics tracking removed
+✓ iCloud/App Store links removed
+✓ Clean, fast-loading pages
+✓ Ready to customize with your branding!
+
+════════════════════════════════════════════════════════════════════════════════
+
+🎯 NEXT STEPS AFTER VIEWING
+─────────────────────────────────────────────────────────────────────────────
+
+1. ✓ View the website (using RUN_WEBSITE.bat)
+2. ✓ Verify changes look good
+3. ⏭ Update page titles (change "Apple" to your brand)
+4. ⏭ Update meta descriptions
+5. ⏭ Update footer with your actual contact info
+6. ⏭ Replace product content with your own
+7. ⏭ Deploy to hosting (GitHub Pages, Netlify, etc.)
+
+════════════════════════════════════════════════════════════════════════════════
+
+🚀 READY? 
+─────────────────────────────────────────────────────────────────────────────
+
+👉 Double-click: RUN_WEBSITE.bat
+👉 Or run: python -m http.server 8001 in the apple-clone folder
+👉 Then open: http://localhost:8001 in your browser
+
+Enjoy your personalized website! 🎉
+
+════════════════════════════════════════════════════════════════════════════════

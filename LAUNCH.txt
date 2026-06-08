@@ -1,0 +1,58 @@
+╔═══════════════════════════════════════════════════════════════════════╗
+║                                                                       ║
+║              ⚡ READY TO VIEW YOUR WEBSITE? (2 STEPS)                 ║
+║                                                                       ║
+╚═══════════════════════════════════════════════════════════════════════╝
+
+👉 FASTEST WAY:
+───────────────
+
+1. Open your apple-clone folder
+2. Double-click: RUN_WEBSITE.bat
+3. Open browser to: http://localhost:8001
+
+Done! ✨
+
+═══════════════════════════════════════════════════════════════════════
+
+📂 FILES AVAILABLE IN YOUR FOLDER:
+───────────────────────────────────
+
+NEW STARTUP FILES:
+✓ RUN_WEBSITE.bat          ← Double-click to run everything
+✓ HOW_TO_RUN.txt           ← Detailed instructions
+
+CLEANUP TOOLS:
+✓ remove_apple_links.py    ← The cleanup script
+✓ clean_apple_links.bat    ← Alternative to run script
+
+GUIDES & DOCUMENTATION:
+✓ 00_READ_ME_FIRST.txt              ← Start here
+✓ QUICK_START.md                    ← Quick reference
+✓ APPLE_LINKS_REMOVAL_GUIDE.md      ← Detailed guide
+✓ REPLACEMENT_CHECKLIST.txt         ← What changed
+
+═══════════════════════════════════════════════════════════════════════
+
+💡 IF DOUBLE-CLICK DOESN'T WORK:
+─────────────────────────────────
+
+Open Command Prompt and run:
+
+cd c:\Users\CLINIC\.gemini\antigravity-ide\scratch\apple-clone
+python -m http.server 8001
+
+Then go to: http://localhost:8001
+
+═══════════════════════════════════════════════════════════════════════
+
+✅ WHAT YOU'LL SEE:
+────────────────────
+
+Your Apple website clone with:
+✓ All Apple links removed
+✓ Social media links to YOUR profiles
+✓ Clean, personalized layout
+✓ Ready to customize further
+
+═══════════════════════════════════════════════════════════════════════
